@@ -8,6 +8,7 @@ URL:            https://github.com/krallin/tini
 Source0:        https://github.com/krallin/tini/archive/v%{version}.tar.gz
 
 BuildRequires:  cmake
+BuildRequires:  glibc-static
 
 %description
 A tiny but valid "init" for containers
@@ -26,10 +27,7 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %files
-%license add-license-file-here
-%doc add-docs-here
-
-
+%doc README.md LICENSE
 
 %changelog
 * Wed Jul 18 2018 Ricardo Martinelli de Oliveira <ricardo.martinelli.oliveira@gmail.com>
