@@ -19,6 +19,7 @@ A tiny but valid "init" for containers
 %setup -q -n %{name}-%{version}
 
 %build
+export CC=$(which gcc)
 export CFLAGS="-DPR_SET_CHILD_SUBREAPER=36 -DPR_GET_CHILD_SUBREAPER=37"
 cmake . && make
 
