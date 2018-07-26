@@ -9,6 +9,7 @@ Source0:        https://github.com/krallin/tini/archive/v%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  glibc-static
+BuildRequires:  gcc
 
 %global debug_package %{nil} 
 
