@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+old mode 100644
+new mode 100755
+index 490bec8..9093b81
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -81,12 +81,12 @@ include_directories ("${PROJECT_BINARY_DIR}")
+ 
+ add_executable (tini src/tini.c)
+ 
+-add_executable (tini-static src/tini.c)
+-set_target_properties (tini-static PROPERTIES LINK_FLAGS "-Wl,--no-export-dynamic -static")
++#add_executable (tini-static src/tini.c)
++#set_target_properties (tini-static PROPERTIES LINK_FLAGS "-Wl,--no-export-dynamic -static")
+ 
+ # Installation
+ install (TARGETS tini DESTINATION bin)
+-install (TARGETS tini-static DESTINATION bin)
++#install (TARGETS tini-static DESTINATION bin)
+ 
+ # Packaging
+ include (InstallRequiredSystemLibraries)
