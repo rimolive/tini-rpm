@@ -7,6 +7,8 @@ License:        MIT
 URL:            https://github.com/krallin/tini
 Source0:        https://github.com/krallin/tini/archive/v%{version}.tar.gz
 
+Patch0:         01-cmake-remove-static-build.patch
+
 BuildRequires:  cmake
 
 %global debug_package %{nil} 
@@ -16,6 +18,7 @@ A tiny but valid "init" for containers
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p1
 
 %build
 %cmake
@@ -24,9 +27,6 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 %make_install
-
-%check
-sh run_tests.sh
 
 %files
 %doc README.md
